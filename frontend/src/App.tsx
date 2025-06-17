@@ -1,21 +1,22 @@
-import { Route, Routes } from "react-router-dom";
-import Sidebar from "./components/Sidebar";
+import { Routes, Route } from "react-router-dom";
+import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import Tasks from "./pages/Tasks";
-// import NotFound from "./pages/NotFound";
+import Suggestions from "./pages/Suggestions";
+import Dashboard from "./pages/Dashboard";
+import Calendar from "./pages/Calendar";
 
 function App() {
   return (
-    <div className="flex min-h-screen">
-      <Sidebar />
-      <main className="flex-1 p-6 bg-gray-50">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/tasks" element={<Tasks />} />
-          {/* <Route path="*" element={<NotFound />} /> */}
-        </Routes>
-      </main>
-    </div>
+    <Routes>
+      <Route element={<Layout />}>
+        <Route path="/" element={<Home />} />
+        <Route path="/tasks" element={<Tasks />} />
+        <Route path="/suggestions" element={<Suggestions />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/calendar" element={<Calendar />} />
+      </Route>
+    </Routes>
   );
 }
 
