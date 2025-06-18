@@ -5,6 +5,7 @@ import Tasks from "./pages/Tasks";
 import Suggestions from "./pages/Suggestions";
 import Dashboard from "./pages/Dashboard";
 import Calendar from "./pages/Calendar";
+import TaskGenerator from "./pages/TaskGenerator";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/suggestions" element={<Suggestions />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/calendar" element={<Calendar />} />
+        <Route path="/generate-tasks" element={<TaskGenerator />} />
       </Route>
     </Routes>
   );

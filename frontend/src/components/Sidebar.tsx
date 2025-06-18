@@ -11,6 +11,7 @@ import {
 import { NavLink } from "react-router-dom";
 import { useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
+import { SiTodoist } from "react-icons/si";
 
 interface SidebarProps {
   isOpen: boolean;
@@ -84,9 +85,6 @@ const Sidebar = ({ isOpen, setIsOpen }: SidebarProps) => {
           <NavLink to="/dashboard" className={linkStyle}>
             <FaChartPie /> Dashboard
           </NavLink>
-          <NavLink to="/" className={linkStyle}>
-            <FaRobot /> Gemini Assistant
-          </NavLink>
           <NavLink to="/suggestions" className={linkStyle}>
             <FaLightbulb /> Smart Suggestions
           </NavLink>
@@ -107,8 +105,8 @@ const Sidebar = ({ isOpen, setIsOpen }: SidebarProps) => {
           className="overflow-hidden space-y-1 pl-2"
           style={{ height: openTasks ? "auto" : 0 }}
         >
-          <NavLink to="/tasks" className={linkStyle}>
-            <FaTasks /> Manage Tasks
+          <NavLink to="/generate-tasks" className={linkStyle}>
+            <SiTodoist/> Manage Tasks
           </NavLink>
           <NavLink to="/calendar" className={linkStyle}>
             <FaCalendarAlt /> Task Calendar
